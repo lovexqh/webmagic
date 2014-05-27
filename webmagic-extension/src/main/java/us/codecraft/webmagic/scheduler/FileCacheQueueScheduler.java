@@ -2,8 +2,6 @@ package us.codecraft.webmagic.scheduler;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Request;
 import us.codecraft.webmagic.Task;
 
@@ -23,9 +21,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author code4crafter@gmail.com <br>
  * @since 0.2.0
  */
-public class FileCacheQueueScheduler implements Scheduler {
-
-    private Logger logger = LoggerFactory.getLogger(getClass());
+public class FileCacheQueueScheduler extends DuplicateRemovedScheduler implements MonitorableScheduler {
 
     private String filePath = System.getProperty("java.io.tmpdir");
 
@@ -145,18 +141,12 @@ public class FileCacheQueueScheduler implements Scheduler {
     }
 
     @Override
-    public synchronized void push(Request request, Task task) {
+    protected void pushWhenNoDuplicate(Request request, Task task) {
         if (!inited.get()) {
             init(task);
         }
-        if (logger.isDebugEnabled()) {
-            logger.debug("push to queue " + request.getUrl());
-        }
-        if (urls.add(request.getUrl())) {
-            queue.add(request);
-            fileUrlWriter.println(request.getUrl());
-        }
-
+        queue.add(request);
+        fileUrlWriter.println(request.getUrl());
     }
 
     @Override
@@ -166,5 +156,15 @@ public class FileCacheQueueScheduler implements Scheduler {
         }
         fileCursorWriter.println(cursor.incrementAndGet());
         return queue.poll();
+    }
+
+    @Override
+    public int getLeftRequestsCount(Task task) {
+        return queue.size();
+    }
+
+    @Override
+    public int getTotalRequestsCount(Task task) {
+        return getDuplicateRemover().getTotalRequestsCount(task);
     }
 }

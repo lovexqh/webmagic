@@ -109,12 +109,27 @@ public class PlainText implements Selectable {
     }
 
     @Override
+    public Selectable jsonPath(String jsonPath) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public String get() {
         if (CollectionUtils.isNotEmpty(all())) {
             return all().get(0);
         } else {
             return null;
         }
+    }
+
+    @Override
+    public Selectable select(Selector selector) {
+        return select(selector, strings);
+    }
+
+    @Override
+    public Selectable selectList(Selector selector) {
+        return selectList(selector, strings);
     }
 
     @Override

@@ -1,4 +1,4 @@
-![logo](https://raw.github.com/code4craft/webmagic/master/asserts/logo.jpg)
+![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
 
 [Readme in Chinese](https://github.com/code4craft/webmagic/tree/master/zh_docs)
 
@@ -25,12 +25,12 @@ Add dependencies to your pom.xml:
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-core</artifactId>
-    <version>0.4.3</version>
+    <version>0.5.1</version>
 </dependency>
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-extension</artifactId>
-    <version>0.4.3</version>
+    <version>0.5.1</version>
 </dependency>
 ```
         
@@ -110,6 +110,8 @@ public class GithubRepo {
 		
 ### Docs and samples:
 
+Documents: [http://webmagic.io/docs/](http://webmagic.io/docs/)
+
 The architecture of webmagic (refered to [Scrapy](http://scrapy.org/))
 
 ![image](http://code4craft.github.io/images/posts/webmagic.png)
@@ -126,6 +128,7 @@ Lisenced under [Apache 2.0 lisence](http://opensource.org/licenses/Apache-2.0)
 
 Thanks these people for commiting source code, reporting bugs or suggesting for new feature:
 
+* [ccliangbo](https://github.com/ccliangbo)
 * [yuany](https://github.com/yuany)
 * [yxssfxwzy](https://github.com/yxssfxwzy)
 * [linkerlin](https://github.com/linkerlin)
@@ -139,8 +142,10 @@ Thanks these people for commiting source code, reporting bugs or suggesting for 
 * [ywooer](https://github.com/ywooer)
 * [yyw258520](https://github.com/yyw258520)
 * [perfecking](https://github.com/perfecking)
-* [ccliangbo](https://github.com/ccliangbo)
 * [lidongyang](http://my.oschina.net/lidongyang)
+* [seveniu](https://github.com/seveniu)
+* [sebastian1118](https://github.com/sebastian1118)
+* [codev777](https://github.com/codev777)
 
 
 ### Thanks:
@@ -165,7 +170,7 @@ To write webmagic, I refered to the projects below :
 
 [http://list.qq.com/cgi-bin/qf_invite?id=023a01f505246785f77c5a5a9aff4e57ab20fcdde871e988](http://list.qq.com/cgi-bin/qf_invite?id=023a01f505246785f77c5a5a9aff4e57ab20fcdde871e988)
 
-QQ Group: 330192938
+QQ Group: 373225642
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/code4craft/webmagic/trend.png)](https://bitdeli.com/free "Bitdeli Badge")

@@ -1,4 +1,4 @@
-![logo](https://raw.github.com/code4craft/webmagic/master/asserts/logo.jpg)
+![logo](https://raw.github.com/code4craft/webmagic/master/assets/logo.jpg)
 
 
 [![Build Status](https://travis-ci.org/code4craft/webmagic.png?branch=master)](https://travis-ci.org/code4craft/webmagic)
@@ -6,7 +6,7 @@
 
 [Readme in English](https://github.com/code4craft/webmagic/tree/master/en_docs)
 
-[用户手册](https://github.com/code4craft/webmagic/blob/master/user-manual.md)
+官方网站[http://webmagic.io/](http://webmagic.io/)
 
 >webmagic是一个开源的Java垂直爬虫框架，目标是简化爬虫的开发流程，让开发者专注于逻辑功能的开发。webmagic的核心非常简单，但是覆盖爬虫的整个流程，也是很好的学习爬虫开发的材料。作者曾经在前公司进行过一年的垂直爬虫的开发，webmagic就是为了解决爬虫开发的一些重复劳动而产生的框架。
 
@@ -41,12 +41,12 @@ webmagic使用maven管理依赖，在项目中添加对应的依赖即可使用w
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-core</artifactId>
-    <version>0.4.3</version>
+    <version>0.5.1</version>
 </dependency>
 <dependency>
     <groupId>us.codecraft</groupId>
     <artifactId>webmagic-extension</artifactId>
-    <version>0.4.3</version>
+    <version>0.5.1</version>
 </dependency>
 ```
         
@@ -158,7 +158,7 @@ public class OschinaBlog {
 
 ### 详细文档
 
-见[webmagic manual.md](https://github.com/code4craft/webmagic/blob/master/user-manual.md)。
+见[http://webmagic.io/docs/](http://webmagic.io/docs/)。
 
 ### 示例
 
@@ -175,6 +175,7 @@ webmagic遵循[Apache 2.0协议](http://opensource.org/licenses/Apache-2.0)
 
 以下是为WebMagic提交过代码或者issue的朋友:
 
+* [ccliangbo](https://github.com/ccliangbo)
 * [yuany](https://github.com/yuany)
 * [yxssfxwzy](https://github.com/yxssfxwzy)
 * [linkerlin](https://github.com/linkerlin)
@@ -188,8 +189,10 @@ webmagic遵循[Apache 2.0协议](http://opensource.org/licenses/Apache-2.0)
 * [ywooer](https://github.com/ywooer)
 * [yyw258520](https://github.com/yyw258520)
 * [perfecking](https://github.com/perfecking)
-* [ccliangbo](https://github.com/ccliangbo)
 * [lidongyang](http://my.oschina.net/lidongyang)
+* [seveniu](https://github.com/seveniu)
+* [sebastian1118](https://github.com/sebastian1118)
+* [codev777](https://github.com/codev777)
 
 ### 邮件组:
 
@@ -201,4 +204,4 @@ QQ:
 
 ### QQ群：
 
-330192938
+373225642

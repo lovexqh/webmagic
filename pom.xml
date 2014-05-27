@@ -6,7 +6,7 @@
         <version>7</version>
     </parent>
     <groupId>us.codecraft</groupId>
-    <version>0.5.0-SNAPSHOT</version>
+    <version>0.5.2-SNAPSHOT</version>
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <properties>
@@ -54,7 +54,7 @@
         <module>webmagic-selenium</module>
         <module>webmagic-saxon</module>
         <module>webmagic-samples</module>
-        <module>webmagic-avalon</module>
+        <!--<module>webmagic-avalon</module>-->
     </modules>
 
     <dependencyManagement>
@@ -88,12 +88,24 @@
             <dependency>
                 <groupId>us.codecraft</groupId>
                 <artifactId>xsoup</artifactId>
-                <version>0.2.2</version>
+                <version>0.2.3</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.1.37</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.dreamhead</groupId>
+                <artifactId>moco-core</artifactId>
+                <version>0.9.1</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-simple</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>log4j</groupId>
@@ -154,26 +166,26 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.8</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>copy-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/lib</outputDirectory>
-                            <overWriteReleases>false</overWriteReleases>
-                            <overWriteSnapshots>false</overWriteSnapshots>
-                            <overWriteIfNewer>true</overWriteIfNewer>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-dependency-plugin</artifactId>-->
+                <!--<version>2.8</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>copy-dependencies</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>copy-dependencies</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<outputDirectory>${project.build.directory}/lib</outputDirectory>-->
+                            <!--<overWriteReleases>false</overWriteReleases>-->
+                            <!--<overWriteSnapshots>false</overWriteSnapshots>-->
+                            <!--<overWriteIfNewer>true</overWriteIfNewer>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
