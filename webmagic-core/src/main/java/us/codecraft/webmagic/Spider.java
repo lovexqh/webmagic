@@ -14,7 +14,7 @@ import us.codecraft.webmagic.pipeline.ResultItemsCollectorPipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.scheduler.QueueScheduler;
 import us.codecraft.webmagic.scheduler.Scheduler;
-import us.codecraft.webmagic.selector.thread.CountableThreadPool;
+import us.codecraft.webmagic.thread.CountableThreadPool;
 import us.codecraft.webmagic.utils.UrlUtils;
 
 import java.io.Closeable;
@@ -325,7 +325,7 @@ public class Spider implements Runnable, Task {
                             onError(requestFinal);
                             logger.error("process request " + requestFinal + " error", e);
                         } finally {
-                            if (site.getHttpProxyPool().isEnable()) {
+                            if (site.getHttpProxyPool()!=null && site.getHttpProxyPool().isEnable()) {
                                 site.returnHttpProxyToPool((HttpHost) requestFinal.getExtra(Request.PROXY), (Integer) requestFinal
                                         .getExtra(Request.STATUS_CODE));
                             }
@@ -424,6 +424,8 @@ public class Spider implements Runnable, Task {
                 pipeline.process(page.getResultItems(), this);
             }
         }
+        //for proxy status management
+        request.putExtra(Request.STATUS_CODE, page.getStatusCode());
         sleep(site.getSleepTime());
     }
 
